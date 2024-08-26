@@ -5,55 +5,71 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pop-up model</title>
-  
-<style>
-  body {
-    background-color: gray;
-  }
 
-  .popup {
-    max-width: 350px;
-    background-color: white;
-    border: 1px solid black;
-  }
+  <style>
+    body {
+      background-color: gray;
+    }
 
-  .closebtn .bar:nth-child(1) {
-    transform: translateY(3px) rotate(45deg);
-  }
+    .pop-toggle {
+      font-size: 40px;
+    }
 
-  .closebtn .bar:nth-child(2) {
-    transform: translateY(-5px) rotate(-45deg);
-  }
+    .popup {
+      max-width: 350px;
+      background-color: white;
+      border: 1px solid black;
+    }
 
-  .bar {
-    display: block;
-    width: 17px;
-    height: 3px;
-    margin: 5px auto;
-    background-color: #101010;
-  }
+    .closebtn .bar:nth-child(1) {
+      transform: translateY(3px) rotate(45deg);
+    }
 
-  .options {
-    display: flex;
-    flex-direction: column;
-    padding: 15px;
-    gap: 15px;
-  }
-</style>
+    .closebtn .bar:nth-child(2) {
+      transform: translateY(-5px) rotate(-45deg);
+    }
+
+    .bar {
+      display: block;
+      width: 17px;
+      height: 3px;
+      margin: 5px auto;
+      background-color: #101010;
+    }
+
+    .options {
+      display: flex;
+      flex-direction: column;
+      padding: 15px;
+      gap: 15px;
+    }
+  </style>
 </head>
 
 <body>
-  <div class="popup">
-    <div class="closebtn">
-      <span class="bar"></span>
-      <span class="bar"></span>
+  <div class="popup-container">
+
+    <div class="pop-toggle">
+      <i class="fa-solid fa-comment-medical"></i>
     </div>
-    <div class="options">
-      <button class="optionsbtn">Book an Appointment</button>
-      <button class="optionsbtn">Refill a Prescription</button>
-      <button class="optionsbtn">Shop Online</button>
+
+    <div class="popup">
+
+      <div class="closebtn">
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+
+      <div class="options">
+        <button class="optionsbtn">Book an Appointment</button>
+        <button class="optionsbtn">Refill a Prescription</button>
+        <button class="optionsbtn">Shop Online</button>
+      </div>
+
     </div>
   </div>
+
+  <script src="https://kit.fontawesome.com/338d227227.js" crossorigin="anonymous"></script>
 </body>
 
 </html>
