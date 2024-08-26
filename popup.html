@@ -5,7 +5,41 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pop-up model</title>
+  
+<style>
+  body {
+    background-color: gray;
+  }
 
+  .popup {
+    max-width: 350px;
+    background-color: white;
+    border: 1px solid black;
+  }
+
+  .closebtn .bar:nth-child(1) {
+    transform: translateY(3px) rotate(45deg);
+  }
+
+  .closebtn .bar:nth-child(2) {
+    transform: translateY(-5px) rotate(-45deg);
+  }
+
+  .bar {
+    display: block;
+    width: 17px;
+    height: 3px;
+    margin: 5px auto;
+    background-color: #101010;
+  }
+
+  .options {
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    gap: 15px;
+  }
+</style>
 </head>
 
 <body>
