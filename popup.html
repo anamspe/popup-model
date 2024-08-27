@@ -11,30 +11,37 @@
       background-color: gray;
     }
 
+    .popup-container {
+      display: flex;
+      gap: 5px;
+      align-items: end;
+      margin-top: 20px;
+    }
+
     .pop-toggle {
       font-size: 40px;
+      
     }
 
     .popup {
-      max-width: 350px;
+      width: 330px;
       background-color: white;
       border: 1px solid black;
     }
 
-    .closebtn .bar:nth-child(1) {
-      transform: translateY(3px) rotate(45deg);
-    }
-
-    .closebtn .bar:nth-child(2) {
-      transform: translateY(-5px) rotate(-45deg);
-    }
-
-    .bar {
-      display: block;
-      width: 17px;
-      height: 3px;
-      margin: 5px auto;
-      background-color: #101010;
+   .closebtn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: white;
+      border-radius: 100%;
+      margin: 0 auto;
+      width: 28px;
+      height: 28px;
+      border: 1px solid black;
+      position: absolute;
+      left: 370px;
+      top: 6px;
     }
 
     .options {
@@ -43,6 +50,12 @@
       padding: 15px;
       gap: 15px;
     }
+
+    .optionsbtn {
+      padding: 10px;
+      border-radius: 10px;
+    }
+
   </style>
 </head>
 
@@ -50,14 +63,13 @@
   <div class="popup-container">
 
     <div class="pop-toggle">
-      <i class="fa-solid fa-comment-medical"></i>
+      <i class="fa-solid fa-notes-medical"></i>
     </div>
 
     <div class="popup">
 
       <div class="closebtn">
-        <span class="bar"></span>
-        <span class="bar"></span>
+        <i class="fa-solid fa-xmark"></i>
       </div>
 
       <div class="options">
