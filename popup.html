@@ -105,6 +105,11 @@
       gap: 15px;
     }
 
+    .options a {
+      text-decoration: none;
+      color: white;
+    }
+
     .optionsbtn {
       display: flex;
       justify-content: center;
@@ -114,10 +119,9 @@
       padding: 15px 0;
       border-radius: 8px;
       background-color: #01467A;
-      color: white;
       box-shadow: 0 1px 3px 1px rgba(29, 60, 111, .25);
       transition: background-color 0.3s, box-shadow 0.3s;
-      cursor: pointer;
+      cursor: pointer;      
     }
 
     .shop {
@@ -149,9 +153,9 @@
       </div>
 
       <div class="options">
-        <div class="optionsbtn">Book an Appointment</div>
-        <div class="optionsbtn">Refill a Prescription</div>
-        <div class="optionsbtn shop">Shop Online</div>
+        <a href="#book-appointment"><div class="optionsbtn">Book an Appointment</div></a>
+        <a href="#refill"><div class="optionsbtn">Refill a Prescription</div></a>
+        <a href="#"><div class="optionsbtn shop">Shop Online</div></a>
       </div>
 
     </div>
