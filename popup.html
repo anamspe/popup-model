@@ -12,6 +12,9 @@
     rel="stylesheet">
 
   <style>
+    body {
+      background-color: lightcoral;
+    }
 
     .popup-container {
       display: flex;
@@ -25,32 +28,63 @@
 
     #pop-toggle {
       display: none;
-      font-size: 40px;      
+      font-size: 35px;
+      color: #01467A;
+      background-color: whitesmoke;
+      padding: 12px 14px;
+      border-radius: 25px;
+      box-shadow: 0 1px 3px 1px rgba(29, 60, 111, .25);
+      position: relative;
+      cursor: pointer;
+      transition: background-color 0.3s, box-shadow 0.3s;
+    }
+
+    #pop-toggle::after {
+      content: '';
+      position: absolute;
+      top: 53%;
+      right: -5px;
+      border-top: 10px solid transparent;
+      border-bottom: 10px solid transparent;
+      border-left: 10px solid whitesmoke;      
+    }
+
+    #pop-toggle:hover {
+      color: #0073BF91;
+      box-shadow: 0 3px 5px 3px rgba(29, 60, 111, .25);
     }
 
     #popup {
       display: none;
-      width: 330px;
-      padding:10px; 
-      border:1px solid #ccc;
+      position: relative;
+      top: -20px;
+      width: 290px;
+      padding: 10px;
+      border: 1px solid #cccccc75;
       background-color: white;
-      border-radius: 8px;      
+      border-radius: 8px;
     }
 
-   #closebtn {
+    #closebtn {
+      font-size: 13px;
       display: flex;
       align-items: center;
       justify-content: center;
       background-color: white;
       border-radius: 100%;
       margin: 0 auto;
-      width: 28px;
-      height: 28px;
-      box-shadow: 0 1px 3px 0 rgba(29,60,111,.25);
-      /* border: 1px solid #ccc; */
+      width: 25px;
+      height: 25px;
+      box-shadow: 0 1px 3px 1px rgba(29, 60, 111, .25);
+      transition: box-shadow 0.2s;
+      cursor: pointer;
       position: absolute;
-      left: 380px;
-      top: -15px;
+      left: 295px;
+      top: -10px;
+    }
+
+    #closebtn:hover {
+      box-shadow: 0 3px 5px 3px rgba(29, 60, 111, .25);
     }
 
     .options {
@@ -61,11 +95,32 @@
     }
 
     .optionsbtn {
+      display: flex;
+      justify-content: center;
       font-family: "Raleway", sans-serif;
-      padding: 10px;
-      border-radius: 10px;
+      font-size: 14px;
+      font-weight: 600;
+      padding: 15px 0;
+      border-radius: 8px;
+      background-color: #01467A;
+      color: white;
+      box-shadow: 0 1px 3px 1px rgba(29, 60, 111, .25);
+      transition: background-color 0.3s, box-shadow 0.3s;
+      cursor: pointer;
     }
 
+    .shop {
+      background-color: #B30036;
+    }
+
+    .optionsbtn:hover {      
+      background-color: #0073BF91;
+      box-shadow: 0 3px 5px 3px rgba(29, 60, 111, .25);
+    }
+
+    .shop:hover {
+      background-color: #d62d5f;
+    }
   </style>
 </head>
 
@@ -73,7 +128,7 @@
   <div class="popup-container">
 
     <div id="pop-toggle">
-      <i class="fa-solid fa-notes-medical"></i>
+      <i class="fa-solid fa-house-chimney-medical"></i></i>
     </div>
 
     <div id="popup">
@@ -83,9 +138,9 @@
       </div>
 
       <div class="options">
-        <button class="optionsbtn">Book an Appointment</button>
-        <button class="optionsbtn">Refill a Prescription</button>
-        <button class="optionsbtn">Shop Online</button>
+        <div class="optionsbtn">Book an Appointment</div>
+        <div class="optionsbtn">Refill a Prescription</div>
+        <div class="optionsbtn shop">Shop Online</div>
       </div>
 
     </div>
@@ -96,9 +151,9 @@
     setTimeout(() => {
       document.getElementById("pop-toggle").style.display = "block";
     }, 2000);
-      
+
     setTimeout(() => {
-    document.getElementById("popup").style.display = "block";
+      document.getElementById("popup").style.display = "block";
     }, 2500);
 
     // Click on close pop-up button
