@@ -6,10 +6,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pop-up model</title>
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+
   <style>
-    body {
-      background-color: gray;
-    }
 
     .popup-container {
       display: flex;
@@ -22,8 +24,8 @@
     }
 
     #pop-toggle {
-      font-size: 40px;
-      
+      display: none;
+      font-size: 40px;      
     }
 
     #popup {
@@ -32,7 +34,7 @@
       padding:10px; 
       border:1px solid #ccc;
       background-color: white;
-      
+      border-radius: 8px;      
     }
 
    #closebtn {
@@ -44,7 +46,8 @@
       margin: 0 auto;
       width: 28px;
       height: 28px;
-      border: 1px solid #ccc;
+      box-shadow: 0 1px 3px 0 rgba(29,60,111,.25);
+      /* border: 1px solid #ccc; */
       position: absolute;
       left: 380px;
       top: -15px;
@@ -58,6 +61,7 @@
     }
 
     .optionsbtn {
+      font-family: "Raleway", sans-serif;
       padding: 10px;
       border-radius: 10px;
     }
@@ -90,8 +94,12 @@
   <script>
     // Open pop-up window after 3s
     setTimeout(() => {
-      document.getElementById("popup").style.display = "block";
+      document.getElementById("pop-toggle").style.display = "block";
     }, 2000);
+      
+    setTimeout(() => {
+    document.getElementById("popup").style.display = "block";
+    }, 2500);
 
     // Click on close pop-up button
     document.getElementById("closebtn").onclick = () => {
