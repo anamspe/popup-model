@@ -12,10 +12,6 @@
     rel="stylesheet">
 
   <style>
-    /* body {
-      background-color: lightcoral;
-    } */
-
     .popup-container {
       display: flex;
       position: fixed;
@@ -24,6 +20,7 @@
       gap: 5px;
       align-items: end;
       margin-top: 20px;
+      z-index: 1000;
     }
 
     #pop-toggle {
@@ -46,7 +43,7 @@
       right: -5px;
       border-top: 10px solid transparent;
       border-bottom: 10px solid transparent;
-      border-left: 10px solid whitesmoke;      
+      border-left: 10px solid whitesmoke;
     }
 
     #pop-toggle:hover {
@@ -127,7 +124,7 @@
       background-color: #B30036;
     }
 
-    .optionsbtn:hover {      
+    .optionsbtn:hover {
       background-color: #0073BF91;
       box-shadow: 0 3px 5px 3px rgba(29, 60, 111, .25);
     }
@@ -176,7 +173,7 @@
           popup.classList.add("show");
         }, 20);
       }, 2500);
-      
+
       // Click on close pop-up button
       document.getElementById("closebtn").onclick = () => {
         const popup = document.getElementById("popup");
@@ -184,10 +181,10 @@
         popup.classList.add("hide");
 
         setTimeout(() => {
-          popup.style.display = "none"
-        }, 500)
+          popup.style.display = "none";
+        }, 500);
       };
-      
+
       // Toggle open and close when click at pop-up button
       document.getElementById("pop-toggle").onclick = () => {
         const popup = document.getElementById("popup");
@@ -196,18 +193,18 @@
           popup.classList.remove("show");
           popup.classList.add("hide");
           setTimeout(() => {
-            popup.style.display = "none"; 
-          }, 500); 
+            popup.style.display = "none";
+          }, 500);
         } else { // if the popup is hidden, show it
-          popup.style.display = "block"; 
+          popup.style.display = "block";
           popup.classList.remove("hide");
           setTimeout(() => {
             popup.classList.add("show");
-          }, 20);        
+          }, 20);
         }
       };
-      
-    })
+    });
+    
   </script>
 
   <script src="https://kit.fontawesome.com/338d227227.js" crossorigin="anonymous"></script>
