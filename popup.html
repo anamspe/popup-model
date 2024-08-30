@@ -13,23 +13,29 @@
 
     .popup-container {
       display: flex;
+      position: fixed;
+      bottom: 60px;
+      left: 20px;
       gap: 5px;
       align-items: end;
       margin-top: 20px;
     }
 
-    .pop-toggle {
+    #pop-toggle {
       font-size: 40px;
       
     }
 
-    .popup {
+    #popup {
+      display: none;
       width: 330px;
+      padding:10px; 
+      border:1px solid #ccc;
       background-color: white;
-      border: 1px solid black;
+      
     }
 
-   .closebtn {
+   #closebtn {
       display: flex;
       align-items: center;
       justify-content: center;
@@ -38,10 +44,10 @@
       margin: 0 auto;
       width: 28px;
       height: 28px;
-      border: 1px solid black;
+      border: 1px solid #ccc;
       position: absolute;
-      left: 370px;
-      top: 6px;
+      left: 380px;
+      top: -15px;
     }
 
     .options {
@@ -62,13 +68,13 @@
 <body>
   <div class="popup-container">
 
-    <div class="pop-toggle">
+    <div id="pop-toggle">
       <i class="fa-solid fa-notes-medical"></i>
     </div>
 
-    <div class="popup">
+    <div id="popup">
 
-      <div class="closebtn">
+      <div id="closebtn">
         <i class="fa-solid fa-xmark"></i>
       </div>
 
@@ -80,6 +86,25 @@
 
     </div>
   </div>
+
+  <script>
+    // Open pop-up window after 3s
+    setTimeout(() => {
+      document.getElementById("popup").style.display = "block";
+    }, 2000);
+
+    // Click on close pop-up button
+    document.getElementById("closebtn").onclick = () => {
+      document.getElementById("popup").style.display = "none";
+    };
+
+    // Toggle open and close when click at pop-up button
+    document.getElementById("pop-toggle").onclick = () => {
+      const popup = document.getElementById("popup");
+      popup.style.display = (popup.style.display === "block") ? "none" : "block";
+    };
+
+  </script>
 
   <script src="https://kit.fontawesome.com/338d227227.js" crossorigin="anonymous"></script>
 </body>
