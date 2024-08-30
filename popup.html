@@ -12,9 +12,9 @@
     rel="stylesheet">
 
   <style>
-    body {
+    /* body {
       background-color: lightcoral;
-    }
+    } */
 
     .popup-container {
       display: flex;
@@ -36,7 +36,7 @@
       box-shadow: 0 1px 3px 1px rgba(29, 60, 111, .25);
       position: relative;
       cursor: pointer;
-      transition: background-color 0.3s, box-shadow 0.3s;
+      transition: background-color 0.3s, box-shadow 0.3s, opacity 0.3s, transform 0.3s;
     }
 
     #pop-toggle::after {
@@ -63,6 +63,20 @@
       border: 1px solid #cccccc75;
       background-color: white;
       border-radius: 8px;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+
+    #popup.show {
+      display: block;
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    #popup.hide {
+      opacity: 0;
+      transform: translateY(20px);
     }
 
     #closebtn {
@@ -147,26 +161,53 @@
   </div>
 
   <script>
-    // Open pop-up window after 3s
-    setTimeout(() => {
-      document.getElementById("pop-toggle").style.display = "block";
-    }, 2000);
+    document.addEventListener("DOMContentLoaded", () => {
+      // Open pop-up window after 2s
+      setTimeout(() => {
+        document.getElementById("pop-toggle").style.display = "block";
+      }, 2000);
 
-    setTimeout(() => {
-      document.getElementById("popup").style.display = "block";
-    }, 2500);
+      // Open pop-up window after 2.5s
+      setTimeout(() => {
+        const popup = document.getElementById("popup");
+        popup.style.display = "block";
 
-    // Click on close pop-up button
-    document.getElementById("closebtn").onclick = () => {
-      document.getElementById("popup").style.display = "none";
-    };
+        setTimeout(() => {
+          popup.classList.add("show");
+        }, 20);
+      }, 2500);
+      
+      // Click on close pop-up button
+      document.getElementById("closebtn").onclick = () => {
+        const popup = document.getElementById("popup");
+        popup.classList.remove("show");
+        popup.classList.add("hide");
 
-    // Toggle open and close when click at pop-up button
-    document.getElementById("pop-toggle").onclick = () => {
-      const popup = document.getElementById("popup");
-      popup.style.display = (popup.style.display === "block") ? "none" : "block";
-    };
+        setTimeout(() => {
+          popup.style.display = "none"
+        }, 500)
+      };
+      
+      // Toggle open and close when click at pop-up button
+      document.getElementById("pop-toggle").onclick = () => {
+        const popup = document.getElementById("popup");
 
+        if (popup.classList.contains("show")) { // if the popup is showing, hide it
+          popup.classList.remove("show");
+          popup.classList.add("hide");
+          setTimeout(() => {
+            popup.style.display = "none"; 
+          }, 500); 
+        } else { // if the popup is hidden, show it
+          popup.style.display = "block"; 
+          popup.classList.remove("hide");
+          setTimeout(() => {
+            popup.classList.add("show");
+          }, 20);        
+        }
+      };
+      
+    })
   </script>
 
   <script src="https://kit.fontawesome.com/338d227227.js" crossorigin="anonymous"></script>
