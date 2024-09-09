@@ -12,6 +12,10 @@
     rel="stylesheet">
 
   <style>
+    body {
+      background-color: rosybrown;
+    }
+    
     .popup-container {
       display: flex;
       position: fixed;
@@ -26,7 +30,7 @@
     #pop-toggle {
       display: none;
       font-size: 35px;
-      color: #01467A;
+      color: #879b72;
       background-color: whitesmoke;
       padding: 12px 14px;
       border-radius: 25px;
@@ -39,7 +43,7 @@
     #pop-toggle::after {
       content: '';
       position: absolute;
-      top: 53%;
+      top: 50%;
       right: -5px;
       border-top: 10px solid transparent;
       border-bottom: 10px solid transparent;
@@ -47,7 +51,7 @@
     }
 
     #pop-toggle:hover {
-      color: #0073BF91;
+      color: #A2AD96;
       box-shadow: 0 3px 5px 3px rgba(29, 60, 111, .25);
     }
 
@@ -118,23 +122,23 @@
       font-weight: 600;
       padding: 15px 0;
       border-radius: 8px;
-      background-color: #01467A;
+      background-color: #A2AD96;
       box-shadow: 0 1px 3px 1px rgba(29, 60, 111, .25);
       transition: background-color 0.3s, box-shadow 0.3s;
       cursor: pointer;      
     }
 
     .shop {
-      background-color: #B30036;
+      background-color: #750000;
     }
 
     .optionsbtn:hover {
-      background-color: #0073BF91;
+      background-color: #948282;
       box-shadow: 0 3px 5px 3px rgba(29, 60, 111, .25);
     }
 
     .shop:hover {
-      background-color: #d62d5f;
+      background-color: #a11111;
     }
   </style>
 </head>
@@ -155,7 +159,7 @@
       <div class="options">
         <a href="#book-appointment"><div class="optionsbtn">Book an Appointment</div></a>
         <a href="#refill"><div class="optionsbtn">Refill a Prescription</div></a>
-        <a href="#"><div class="optionsbtn shop">Shop Online</div></a>
+        <a href="#pharmacistconsultations"><div class="optionsbtn shop">Pharmacist Consultations</div></a>
       </div>
 
     </div>
